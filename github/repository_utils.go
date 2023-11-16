@@ -98,7 +98,7 @@ func getAutolinkByKeyPrefix(client *github.Client, owner, repo, keyPrefix string
 		}
 	}
 
-	return nil, nil
+	return nil, fmt.Errorf("%s key prefix not found in live repo.", keyPrefix)
 }
 
 // listAutolinks returns all autolink references for the given repository.
